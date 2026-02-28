@@ -1,6 +1,7 @@
 package br.com.projeto.ecommerce.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,6 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="tbl_variante_produto")
+@JsonPropertyOrder({"id", "nome", "texto", "link_foto", "produto"})
 public class Variantes {
 
 	@Id

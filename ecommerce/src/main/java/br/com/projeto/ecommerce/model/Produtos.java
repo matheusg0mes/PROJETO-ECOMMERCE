@@ -95,6 +95,15 @@ public class Produtos {
 	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
 	}
+
+	public List<Variantes> getVariantes() {
+		return variantes;
+	}
+
+	public void setVariantes(List<Variantes> variantes) {
+		this.variantes = variantes;
+	}
+	
 	
 	
 }
