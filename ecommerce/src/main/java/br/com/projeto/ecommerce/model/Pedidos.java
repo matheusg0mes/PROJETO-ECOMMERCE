@@ -96,7 +96,7 @@ public class Pedidos {
 	}
 
 	public void setStatus(Integer status) {
-		status = status;
+		this.status = status;
 	}
 
 	public Clientes getId_cliente() {

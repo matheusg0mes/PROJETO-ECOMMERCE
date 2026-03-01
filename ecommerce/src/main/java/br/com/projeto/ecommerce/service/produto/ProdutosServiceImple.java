@@ -3,6 +3,9 @@ package br.com.projeto.ecommerce.service.produto;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import br.com.projeto.ecommerce.dao.ProdutosDAO;
@@ -25,9 +28,9 @@ public class ProdutosServiceImple implements IProdutosService{
 		return dao.save(alterar);
 	}
 
-	@Override
-	public List<Produtos> recuperarTodosOsProdutos() {
-		return dao.findByOrderByNomeAsc();
+	public Page<Produtos> recuperarTodosOsProdutos(Integer numero) {
+		Pageable pagina =  PageRequest.of(numero,5);
+		return dao.findByOrderByNomeAsc(pagina);
 	}
 
 	@Override
