@@ -8,21 +8,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "tbl_usuario")
 public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id_usuario")
 	private Integer id;
 	
 	@Column(name = "nome")
 	private String nome;
 	
-	@Column(name="senha")
+	@Column(name="senha_usuario")
 	private String senha;
 	
-	@Column(name ="login")
+	@Column(name ="login_usuario")
 	private String login;
 
 	public Integer getId() {

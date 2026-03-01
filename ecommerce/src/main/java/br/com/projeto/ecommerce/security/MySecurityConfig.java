@@ -20,6 +20,7 @@ public class MySecurityConfig {
                 .requestMatchers("/v3/api-docs/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/usuario").permitAll()
                 .requestMatchers(HttpMethod.GET, "/produtos").permitAll()
+                .requestMatchers(HttpMethod.POST, "/usuario/login" ).permitAll()
                 .anyRequest().authenticated()
             )
             .cors(cors -> cors.disable());

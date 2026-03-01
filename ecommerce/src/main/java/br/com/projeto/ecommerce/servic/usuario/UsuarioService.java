@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import br.com.projeto.ecommerce.dao.UsuarioDAO;
 import br.com.projeto.ecommerce.model.Usuario;
 import br.com.projeto.ecommerce.security.ECToken;
+import br.com.projeto.ecommerce.security.ECTokenUtil;
 
 @Component
 public class UsuarioService implements IUsuarioService{
@@ -34,9 +35,15 @@ public class UsuarioService implements IUsuarioService{
 
 	@Override
 	public ECToken fazerLogin(String login, String senha) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	    Usuario usuario = dao.findByLogin(login);
 
+	    if (usuario != null) {
+	    	if (encoder.matches(senha, usuario.getSenha())) {
+	    		return ECTokenUtil.generateToken(usuario);
+	    }
+
+	}
+	    return null;
 	
+}
 }
