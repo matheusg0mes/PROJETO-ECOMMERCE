@@ -1,4 +1,4 @@
-# BEJUTERIA API
+# BIJUTERIA API
 
 Projeto de estudos desenvolvido para aprender na prática os fundamentos do desenvolvimento back-end com Java e Spring Boot. A ideia foi simular os fluxos reais de uma loja virtual — cadastro de produtos, clientes, pedidos e autenticação de usuários.
 
